@@ -14,7 +14,6 @@ class ConnectScreen extends StatelessWidget {
   ConnectionController connectionController = Get.find();
   NavigationController navigationController = Get.put(NavigationController());
 
-  ///aliiii
 
   @override
   Widget build(BuildContext context) {
