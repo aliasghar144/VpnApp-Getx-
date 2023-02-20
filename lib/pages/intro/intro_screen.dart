@@ -6,6 +6,7 @@ import 'package:vpn_mobile_app_design/model/app_colors.dart';
 import 'package:vpn_mobile_app_design/routes/routes.dart';
 import 'package:vpn_mobile_app_design/widgets/button.dart';
 
+
 class IntroScreen extends StatelessWidget {
   IntroScreen({Key? key}) : super(key: key);
 
