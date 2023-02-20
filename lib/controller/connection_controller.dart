@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vpn_mobile_app_design/controller/timer_controller.dart';
+import 'package:vpn_mobile_app_design/services/notif_service.dart';
 
 class ConnectionController extends GetxController {
   TimerController timerController = Get.put(TimerController());
@@ -340,27 +341,30 @@ class ConnectionController extends GetxController {
 
     timerController.resetTimer();
     // below condition check app have last connection //
-    if (connectionStatus.value == connected.value ||
-        connectionStatus.value == connecting.value) {
+    if (connectionStatus.value == "Connected" ||
+        connectionStatus.value == "Connecting" ){
       //below connection check we tap connect button again to disconnect
       if (isNowConnected(countryIndex, serverIndex) ||
           (mainButton && countryIndex == lastCountryConnection)) {
         disconnect(isFree);
-        connectionStatus.value = disconnected.value;
+        connectionStatus.value = "Disconnect";
       } else {
+        // to test connecting status
+
         if (countryIndex == 0) {
-          print("connecting");
           disconnect(isFree);
           connect(countryIndex, serverIndex, isFree);
-
+          NotificationService()
+              .showNotification(title: 'Connecting', body: currentServerConnection["city"]);
           lastCountryConnection = countryIndex;
           lastServerConnection = serverIndex;
 
-          connectionStatus.value = connecting.value;
+          connectionStatus.value = "Connecting";
         } else {
           disconnect(isFree);
           connect(countryIndex, serverIndex, isFree);
-
+          NotificationService()
+              .showNotification(title: 'connected', body: currentServerConnection["city"]);
           lastCountryConnection = countryIndex;
           lastServerConnection = serverIndex;
 
@@ -368,24 +372,29 @@ class ConnectionController extends GetxController {
         }
       }
     } else {
+
       //******
       // happen for connect to vpn first time
       //******
+
       if (countryIndex == 0) {
         /*
-        //////////// make connecting status
+        //////////// to test connecting status
         */
 
         connect(countryIndex, serverIndex, isFree);
+        NotificationService()
+            .showNotification(title: 'Connecting', body: currentServerConnection["city"]);
         lastCountryConnection = countryIndex;
         lastServerConnection = serverIndex;
-        connectionStatus.value = connecting.value;
+        connectionStatus.value = "Connecting";
       } else {
         connect(countryIndex, serverIndex, isFree);
+
         lastCountryConnection = countryIndex;
         lastServerConnection = serverIndex;
 
-        connectionStatus.value = connected.value;
+        connectionStatus.value = "Connected";
       }
     }
   }
