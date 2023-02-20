@@ -347,6 +347,7 @@ class ConnectionController extends GetxController {
       if (isNowConnected(countryIndex, serverIndex) ||
           (mainButton && countryIndex == lastCountryConnection)) {
         disconnect(isFree);
+        NotificationService().cancelNotification();
         connectionStatus.value = "Disconnect";
       } else {
         // to test connecting status

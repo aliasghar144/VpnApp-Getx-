@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:sizer/sizer.dart';
 
 class MyCustomButton extends StatelessWidget {
   double sizeBox;
@@ -22,13 +22,13 @@ class MyCustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: 60,
+        height: 7.0.h,
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               elevation: 0,
               backgroundColor: backgroundColor,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16)
+                borderRadius: BorderRadius.circular(14.sp)
               ),
             ),
             onPressed: onPress, child: Row(
@@ -40,7 +40,7 @@ class MyCustomButton extends StatelessWidget {
             Text(
               labelText,
               style: TextStyle(
-                  fontSize: 14, fontWeight: FontWeight.w500, color: color),
+                  fontSize: 11.5.sp, fontWeight: FontWeight.w500, color: color),
             ),
             SizedBox(width: sizeBox,),
           ],
