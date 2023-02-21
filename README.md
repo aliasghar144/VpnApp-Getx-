@@ -1,7 +1,9 @@
 
 # VpnApp(flutter-Getx)
+![PagesCover](https://user-images.githubusercontent.com/110099930/220283232-46eb5fff-eb64-4061-b24f-3d0925d960e6.jpg)
 
-my first app :)
+GMAIL : aliasgharghasemi51@gmail.com
+
 
 ## Getting Started
 
