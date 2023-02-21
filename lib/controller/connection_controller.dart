@@ -2,7 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vpn_mobile_app_design/controller/timer_controller.dart';
-import 'package:vpn_mobile_app_design/services/notif_service.dart';
+import 'package:vpn_mobile_app_design/services/notiffication_service.dart';
 
 class ConnectionController extends GetxController {
   TimerController timerController = Get.put(TimerController());
@@ -391,7 +391,8 @@ class ConnectionController extends GetxController {
         connectionStatus.value = "Connecting";
       } else {
         connect(countryIndex, serverIndex, isFree);
-
+        NotificationService()
+            .showNotification(title: 'Connected', body: currentServerConnection["city"]);
         lastCountryConnection = countryIndex;
         lastServerConnection = serverIndex;
 

@@ -22,22 +22,16 @@ class NotificationService {
             (NotificationResponse notificationResponse) async {});
   }
 
-  // Future<void> showOngoingNotification() async {
-  //   const AndroidNotificationDetails androidNotificationDetails = AndroidNotificationDetails(‘channel_id’, ‘Channel Name’, ‘Channel Description’,
-  //   importance: Importance.Max,
-  //   priority: Priority.High,
-  //   ongoing: true,
-  //   autoCancel: false);
-  //   const NotificationDetails notificationDetails = NotificationDetails(androidNotificationDetails, null);
-  //   await flutterLocalNotificationsPlugin.show(0, ‘Flutter Local Notification’, ‘Flutter Ongoing Notification’, notificationDetails, payload: ‘Destination Screen(Ongoing Notification)’);
-  // }
-
   notificationDetails() {
     return const NotificationDetails(
         android: AndroidNotificationDetails('channelId', 'channelName',
+            autoCancel: false,
             importance: Importance.max,
         ongoing: true,
-          enableVibration: false
+          enableVibration: false,
+          actions: [
+            AndroidNotificationAction('dis', "disconnect", )
+          ]
         ),
         iOS: DarwinNotificationDetails());
   }
