@@ -1,10 +1,7 @@
 
-![build](https://img.shields.io/github/followers/aliasghar144?label=Follow%20me%20%3A%29&style=for-the-badge)
+# VpnApp(flutter-Getx)
 
-
-# VpnApp(Getx)
- 
-
+my first app :)
 
 ## Getting Started
 
