@@ -1,6 +1,10 @@
+
+![build](https://img.shields.io/github/followers/aliasghar144?label=Follow%20me%20%3A%29&style=for-the-badge)
+
+
 # VpnApp(Getx)
  
-https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+
 
 ## Getting Started
 
