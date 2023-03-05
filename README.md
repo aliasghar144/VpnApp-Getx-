@@ -6,4 +6,3 @@ Gmail : aliasgharghasemi51@gmail.com
 
 figma file : https://www.figma.com/community/file/1194210811922404830
 
-firts app and first coding
